@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: user-service
-        image: thanhieub2305573/user-service:latest
+        image: mkhuiii/user-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8000
@@ -89,7 +89,7 @@ spec:
     spec:
       containers:
       - name: course-service
-        image: thanhieub2305573/course-service:latest
+        image: mkhuiii/course-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8001
@@ -165,7 +165,7 @@ spec:
     spec:
       containers:
       - name: quiz-exam-service
-        image: thanhieub2305573/quiz-exam-service:latest
+        image: mkhuiii/quiz-exam-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8002
@@ -231,7 +231,7 @@ spec:
     spec:
       containers:
       - name: learning-progress-service
-        image: thanhieub2305573/learning-progress-service:latest
+        image: mkhuiii/learning-progress-service:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8003

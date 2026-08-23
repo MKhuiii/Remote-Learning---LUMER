@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: thanhieub2305573/frontend:latest
+        image: mkhuiii/frontend:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000

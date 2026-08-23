@@ -6,7 +6,14 @@ from app.models.status_catalog import StatusCatalog, UserStatus
 from app.models.user import User
 from app.models.profile import Profile
 from app.core.security import hash_password
-engine = create_engine(settings.USERS_DB_URL)
+engine = create_engine(
+    settings.USERS_DB_URL,
+    pool_size=30,        
+    max_overflow=50,     
+    pool_timeout=60,     
+    pool_recycle=1800,   
+    pool_pre_ping=True   
+)
 
 
 def get_db():
@@ -21,7 +28,7 @@ def init_db() -> None:
     import app.models.profile
     SQLModel.metadata.create_all(engine)
     with Session(engine) as session:
-        # Kiểm tra xem bảng Role đã có dữ liệu chưa 
+        # Kiểm tra xem bảng Role đã có dữ liệu chưa     
         statement = select(func.count()).select_from(Role)
         role_count = session.exec(statement).one()
 
